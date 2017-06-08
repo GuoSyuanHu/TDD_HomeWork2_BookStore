@@ -8,6 +8,16 @@ namespace TDD_HomeWork2_BookStore
     [TestClass]
     public class ShoppingDiscount
     {
+        public Dictionary<int, decimal> discountSetting = new Dictionary<int, decimal>()
+        {
+            { 1, 1m },
+            { 2, 0.95m },
+            { 3, 0.9m },
+            { 4, 0.8m },
+            { 5, 0.75m },
+            { 0, 0m },
+        };
+
         [TestMethod]
         public void Cart_Add_Potter1_has_1_Should_Be_100()
         {
@@ -169,28 +179,9 @@ namespace TDD_HomeWork2_BookStore
                     tempPrice += book.price;
                     book.quantity--;
                 }
-                totalPrice += tempPrice * GetDiscountSetting(bookTypeCount);
+                totalPrice += tempPrice * discountSetting[bookTypeCount];
             }
             return totalPrice;
-        }
-
-        private decimal GetDiscountSetting(int bookTypeCount)
-        {
-            switch (bookTypeCount)
-            {
-                case 1:
-                    return 1m;
-                case 2:
-                    return 0.95m;
-                case 3:
-                    return 0.9m;
-                case 4:
-                    return 0.8m;
-                case 5:
-                    return 0.75m;
-                default:
-                    return 0m;
-            }
         }
     }
 }
