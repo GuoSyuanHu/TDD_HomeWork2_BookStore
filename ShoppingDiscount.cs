@@ -9,7 +9,6 @@ namespace TDD_HomeWork2_BookStore
         [TestMethod]
         public void TestMethod1()
         {
-
         }
     }
 }
