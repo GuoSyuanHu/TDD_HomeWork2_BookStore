@@ -129,6 +129,7 @@ namespace TDD_HomeWork2_BookStore
                 {
                     if (book.quantity == 0)
                     {
+                        bookTypeCount--;
                         continue;
                     }
                     tempPrice += book.price;
