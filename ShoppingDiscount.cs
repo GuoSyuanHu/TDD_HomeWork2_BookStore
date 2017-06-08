@@ -135,6 +135,22 @@ namespace TDD_HomeWork2_BookStore
             Assert.AreEqual(excepted, actual);
         }
 
+
+        [TestMethod]
+        public void Cart_Add_NoBook_Should_Be_0()
+        {
+            // arrange
+            List<Book> bookList = new List<Book>
+            {
+            };
+            // act
+            decimal actual = this.CalculatePrice(bookList);
+            // assert
+            var excepted = 0m;
+
+            Assert.AreEqual(excepted, actual);
+        }
+
         private decimal CalculatePrice(List<Book> bookList)
         {
             var bookTypeCount = bookList.Count();
